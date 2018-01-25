@@ -13,6 +13,7 @@ Package.registerBuildPlugin({
     'babel-compiler@7.0.0',
   ],
   sources: [
+    'compiler.js',
     'vue-typescript.js',
   ],
 });
