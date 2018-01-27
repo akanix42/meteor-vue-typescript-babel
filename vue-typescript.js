@@ -11,23 +11,14 @@ global.vue.lang.ts = global.vue.lang.typescript;
 
 function typescriptHandler({ source, inputFile }, cb) {
   try {
-    const babelOptions = addTypescriptPresetToBabelOptions(inputFile);
-    const result = Babel.compile(source, babelOptions);
+    const result = compiler.processOneFileForTarget(inputFile, source);
 
     cb(null, {
-      script: result.code,
-      map: result.map,
+      script: result.data,
+      map: result.sourceMap,
       useBabel: false,
     });
   } catch (err) {
     cb(err);
   }
-}
-
-function addTypescriptPresetToBabelOptions(inputFile) {
-  const babelOptions = Babel.getDefaultOptions();
-  compiler.inferExtraBabelOptions(inputFile, babelOptions);
-  babelOptions.sourceMap = true;
-
-  return babelOptions;
 }
