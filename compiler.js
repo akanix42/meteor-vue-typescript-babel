@@ -50,13 +50,13 @@ export default class TypeScriptCompiler extends BabelCompiler {
         ? 'packages/' + packageName + '/' + inputFilePath
         : inputFilePath;
 
-    tsBabelOptions.sourceMapTarget = tsBabelOptions.filename + '.map';
     /*  END TO DO */
 
     let result = this.compile(source, tsBabelOptions).await();
     /**
      * Set the source map on the input file so we can add it to the babel options later
      **/
+    result.map.file = tsBabelOptions.filename + '.map';
     inputFile.inputSourceMap = result.map;
     result = super.processOneFileForTarget(inputFile, result.code);
 
