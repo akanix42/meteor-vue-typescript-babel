@@ -7,6 +7,11 @@ const defaultBabelOptions = {
   babelrc: false,
   sourceMaps: true,
   presets: ['@babel/preset-typescript'],
+  plugins: [
+    ['@babel/plugin-syntax-decorators', { legacy: true }],
+    '@babel/plugin-syntax-jsx',
+    '@babel/plugin-syntax-dynamic-import',
+  ],
 };
 
 export default class TypeScriptCompiler extends BabelCompiler {
