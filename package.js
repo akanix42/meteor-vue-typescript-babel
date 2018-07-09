@@ -9,8 +9,8 @@ Package.describe({
 Package.registerBuildPlugin({
   name: "vue-component-typescript-babel",
   use: [
-    'ecmascript@0.10.0',
-    'babel-compiler@7.0.0',
+    'ecmascript@0.10.7',
+    'babel-compiler@7.0.7',
   ],
   sources: [
     'compiler.js',
