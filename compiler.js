@@ -6,11 +6,13 @@ const defaultBabelOptions = {
   ast: false,
   babelrc: false,
   sourceMaps: true,
-  presets: ['@babel/preset-typescript'],
+  // presets: ['@babel/preset-typescript'],
   plugins: [
+    '@babel/plugin-transform-typescript',
     ['@babel/plugin-syntax-decorators', { legacy: true }],
     '@babel/plugin-syntax-jsx',
     '@babel/plugin-syntax-dynamic-import',
+    '@babel/plugin-syntax-object-rest-spread',
   ],
 };
 
@@ -25,7 +27,7 @@ export default class TypeScriptCompiler extends BabelCompiler {
   inferExtraBabelOptions(inputFile, babelOptions, cacheDeps) {
     const result = super.inferExtraBabelOptions(inputFile, babelOptions, cacheDeps);
     babelOptions.inputSourceMap = inputFile.inputSourceMap;
-    babelOptions.sourceMap = true;
+    babelOptions.sourceMaps = true;
 
     return result;
   }
@@ -75,6 +77,8 @@ export default class TypeScriptCompiler extends BabelCompiler {
     return new Promise((resolve, reject) => {
       transform(source, babelOptions, function (err, result) {
         if (err) {
+          console.log('ts babel error!')
+          console.error(err)
           reject(err);
           return;
         }
