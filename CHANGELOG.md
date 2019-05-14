@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file.
 This project follows [Semantic Versioning](http://semver.org/).
 
+## [0.0.6] - 2018-09-06
+ - Simplify compiler so that it only adds Babel TypeScript plugin; the rest of the processing is handled by Meteor's 
+   Babel compiler
+
+## [0.0.4] - 2018-07-09
+ - Update Babel sourcemap option for Babel 7
+ - Update Babel dependencies
+
 ## [0.0.3] - 2018-01-26
  - Insert a separate compilation step to run before Meteor's babel-compiler. This is the TypeScript compilation occurs,
    because otherwise reify will throw errors when it tries to parse some TypeScript syntax such as the `as` keyword.
