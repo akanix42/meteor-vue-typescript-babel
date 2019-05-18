@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project follows [Semantic Versioning](http://semver.org/).
 
+## [1.0.1] - 2019-05-18
+ - Compatible with Meteor 1.8+, no longer supports < Meteor 1.8
+ - Update dependencies to latest versions
+
 ## [0.0.6] - 2018-09-06
  - Simplify compiler so that it only adds Babel TypeScript plugin; the rest of the processing is handled by Meteor's 
    Babel compiler
