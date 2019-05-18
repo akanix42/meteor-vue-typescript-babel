@@ -2,8 +2,9 @@ import { Babel, BabelCompiler } from 'meteor/babel-compiler';
 import { transform } from '@babel/core';
 
 export default class TypeScriptCompiler extends BabelCompiler {
-  constructor() {
+  constructor(cacheDirectory) {
     super({});
+    this.setDiskCacheDirectory(cacheDirectory);
   }
 
   inferExtraBabelOptions(inputFile, babelOptions, cacheDeps) {
