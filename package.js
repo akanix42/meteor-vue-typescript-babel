@@ -9,8 +9,8 @@ Package.describe({
 Package.registerBuildPlugin({
   name: "vue-component-typescript-babel",
   use: [
-    'ecmascript@0.10.7',
-    'babel-compiler@7.0.7',
+    'ecmascript@0.12.4',
+    'babel-compiler@7.3.4',
   ],
   sources: [
     'compiler.js',
@@ -19,6 +19,7 @@ Package.registerBuildPlugin({
 });
 
 Package.onUse(function(api) {
+  api.versionsFrom('1.8');
   api.use('isobuild:compiler-plugin@1.0.0');
-  api.use('akryum:npm-check@0.0.4');
+  api.use('akryum:npm-check@0.1.2');
 });
