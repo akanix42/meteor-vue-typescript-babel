@@ -2,6 +2,9 @@
 All notable changes to this project will be documented in this file.
 This project follows [Semantic Versioning](http://semver.org/).
 
+## [1.0.2] - 2019-08-21
+ - Fix output for legacy bundle (IE 11)
+
 ## [1.0.1] - 2019-05-18
  - Compatible with Meteor 1.8+, no longer supports < Meteor 1.8
  - Update dependencies to latest versions
