@@ -17,11 +17,11 @@ function typescriptHandler({ source, inputFile, cacheDirectory = null }, cb) {
     }
     
     const result = compiler.processOneFileForTarget(inputFile, source);
-
+  
     cb(null, {
       script: result.data,
       map: result.sourceMap,
-      useBabel: false,
+      useBabel: true,
     });
   } catch (err) {
     cb(err);
