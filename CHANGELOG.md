@@ -2,6 +2,9 @@
 All notable changes to this project will be documented in this file.
 This project follows [Semantic Versioning](http://semver.org/).
 
+## [1.0.3] - 2019-10-26
+ - Fix compile error when there is no .babelrc file in the project
+
 ## [1.0.2] - 2019-08-21
  - Fix output for legacy bundle (IE 11)
 
@@ -10,7 +13,7 @@ This project follows [Semantic Versioning](http://semver.org/).
  - Update dependencies to latest versions
 
 ## [0.0.6] - 2018-09-06
- - Simplify compiler so that it only adds Babel TypeScript plugin; the rest of the processing is handled by Meteor's 
+ - Simplify compiler so that it only adds Babel TypeScript plugin; the rest of the processing is handled by Meteor's
    Babel compiler
 
 ## [0.0.4] - 2018-07-09
