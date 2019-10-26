@@ -9,6 +9,9 @@ export default class TypeScriptCompiler extends BabelCompiler {
 
   inferExtraBabelOptions(inputFile, babelOptions, cacheDeps) {
     const result = super.inferExtraBabelOptions(inputFile, babelOptions, cacheDeps);
+    if (!babelOptions.plugins) {
+      babelOptions.plugins = [];
+    }
     babelOptions.plugins.unshift(inputFile.require('@babel/plugin-transform-typescript'));
     return result;
   }
